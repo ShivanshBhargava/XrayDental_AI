@@ -1,12 +1,51 @@
-# React + Vite
+###🦷 DentalInsight AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DentalInsight AI is a full-stack web application that allows users to upload dental DICOM X-ray images, sends them to a Roboflow object detection model for pathology detection, overlays bounding boxes on the image, and prepares data for a future AI-generated diagnostic report.
+3🚀 Features
 
-Currently, two official plugins are available:
+* 📤 Upload DICOM (.dcm) X-ray images
+* 🔍 Automatically detects dental pathologies using Roboflow
+* 📦 Draws bounding boxes with color-coded confidence levels
+* 📋 Displays detection metadata (class and confidence)
+* 🧠 Integrate-ready with LLM for diagnostic report generation (coming soon)
+* 🧰 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#Tools/Tech
+- Frontend	React, Cornerstone.js, Cornerstone Tools
+- DICOM Parsing	Cornerstone WADO Image Loader, dicom-parser
+- Detection	Roboflow Hosted Inference API
+- UX	FontAwesome, Canvas for drawing
+- Planned	OpenAI GPT or similar LLM for report generation
 
-## Expanding the ESLint configuration
+#📸 How It Works
+* Upload a DICOM dental X-ray.
+* Image is parsed and rendered using cornerstone.
+* When you click "Analyze":
+  - The image is converted to PNG and sent to Roboflow.
+  - Roboflow returns detection results.
+  - Bounding boxes are drawn on a canvas overlay with confidence levels.
+  - Detection results are displayed in a list.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#📦 Installation
+1. Clone the repository
+```git clone https://github.com/yourusername/dentalinsight-ai.git```
+```cd dentalinsight-ai```
+2. Install dependencies
+```npm install```
+3. Start the development server
+```npm start```
+
+#🖼️ Screenshot
+<img width="861" alt="Screenshot 2025-05-31 at 2 10 01 PM" src="https://github.com/user-attachments/assets/2e39aeca-1fa4-4544-b335-9d3ce0284ac7" />
+
+#📘 Future Roadmap
+ Integrate LLM (e.g., GPT-4) for generating diagnostic reports from bounding boxes and metadata.
+ Support for multiple DICOM slices.
+ Export annotated images and reports as PDFs.
+ Role-based dashboard for clinicians.
+
+#🤝 Contributing
+PRs are welcome! Please open an issue first to discuss significant changes.
+
+#📄 License
+This project is licensed under the [MIT License](./LICENSE).
